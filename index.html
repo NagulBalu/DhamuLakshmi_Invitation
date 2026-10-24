@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dhamodharan &amp; Lakshmi | Wedding Invitation</title>
+  <meta name="theme-color" content="#4a0b17" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="locked">
+
+  <!-- Lord Muruga background (20% opacity). Put your image next to this file as muruga.jpg -->
+  <div id="bgMuruga" class="bg-muruga" aria-hidden="true"></div>
+  <div class="bg-wash" aria-hidden="true"></div>
+
+  <div id="scrollBar"></div>
+  <button type="button" id="toTop" aria-label="Back to top"><svg viewBox="0 0 44 44"><circle class="trk" cx="22" cy="22" r="19"/><circle class="bar" id="toTopBar" cx="22" cy="22" r="19"/></svg><span>↑</span></button>
+  <div id="cursorGlow" aria-hidden="true"></div>
+  <nav id="sideNav" aria-label="Sections"></nav>
+
+  <!-- canvas for flowers, petals and sparkles -->
+  <canvas id="fx" aria-hidden="true"></canvas>
+
+  <!-- ============ SLIDING OPEN SCREEN ============ -->
+  <div id="intro">
+    <div class="door door-left"></div>
+    <div class="door door-right"></div>
+
+    <div class="intro-center">
+      <div class="logo" aria-label="DL logo">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#fbeab0" />
+              <stop offset="0.5" stop-color="#d9a73a" />
+              <stop offset="1" stop-color="#9c6f1c" />
+            </linearGradient>
+          </defs>
+          <circle cx="100" cy="100" r="94" fill="none" stroke="url(#gold)" stroke-width="3" />
+          <circle cx="100" cy="100" r="85" fill="none" stroke="url(#gold)" stroke-width="1.2" stroke-dasharray="2 6" />
+          <path d="M100 22 C112 40 112 52 100 62 C88 52 88 40 100 22Z" fill="url(#gold)" />
+          <text x="100" y="124" text-anchor="middle" font-family="Great Vibes, cursive" font-size="84" fill="url(#gold)">DL</text>
+          <path d="M58 146 Q100 166 142 146" fill="none" stroke="url(#gold)" stroke-width="1.6" />
+        </svg>
+      </div>
+      <p class="intro-names">Dhamodharan &amp; Lakshmi</p>
+      <p class="intro-small">Wedding Invitation</p>
+      <button id="openBtn" type="button" class="btn-gold">Tap to Open</button>
+    </div>
+  </div>
+
+  <!-- music toggle -->
+  <button id="musicBtn" type="button" aria-label="Toggle music" class="hidden">♪</button>
+  <audio id="bgm" loop preload="auto">
+    <!-- Put your song file next to this page and name it song.mp3 -->
+    <source src="song.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- ============ BLESSING RIBBON (top of page) ============ -->
+    <div class="ribbon" aria-hidden="true">
+      <div class="track">
+        <span>|| ஓம் சரவண பவ ||</span><i>❖</i><span>Dhamodharan weds Lakshmi</span><i>❖</i><span>16 · 11 · 2026</span><i>❖</i><span>Akilandeshwari Thirumana Mahal</span><i>❖</i>
+        <span>|| ஓம் சரவண பவ ||</span><i>❖</i><span>Dhamodharan weds Lakshmi</span><i>❖</i><span>16 · 11 · 2026</span><i>❖</i><span>Akilandeshwari Thirumana Mahal</span><i>❖</i>
+      </div>
+    </div>
+
+  <main id="invite">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <p class="om reveal">|| ஓம் சரவண பவ ||</p>
+      <p class="kicker reveal">We are getting married</p>
+
+      <h1 class="names">
+        <span class="n1" id="typeName1">Dhamodharan</span>
+        <span class="amp">&amp;</span>
+        <span class="n2" id="typeName2">Lakshmi</span>
+      </h1>
+      <p class="sub reveal">Together with our families, we invite you to bless our union</p>
+
+      <div class="photo-orbit reveal" id="tilt">
+        <div class="ring"></div>
+        <div class="photo-frame">
+          <img src="couple.jpg" alt="Dhamodharan and Lakshmi" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COUPLE ============ -->
+    <section class="couple glass reveal">
+      <div class="person">
+        <p class="role">The Groom</p>
+        <h2>Dhamodharan</h2>
+      </div>
+      <div class="weds">weds</div>
+      <div class="person">
+        <p class="role">The Bride</p>
+        <h2>Lakshmi</h2>
+      </div>
+    </section>
+
+    <!-- ============ QUOTES ============ -->
+    <section class="quotes reveal">
+      <h3 class="section-title">Words of Love</h3>
+      <div class="quote-box">
+        <blockquote class="quote active">“Love is not found, it is built, one patient day at a time, by two hearts that choose each other.”</blockquote>
+        <blockquote class="quote">“In your smile I found my home, and in your hand, my forever.”</blockquote>
+        <blockquote class="quote">“Two souls, one heartbeat; wherever life leads us, we walk it together.”</blockquote>
+        <blockquote class="quote">“A good marriage is two people falling in love again and again, in every season.”</blockquote>
+        <blockquote class="quote">“With you, every ordinary day becomes a celebration worth remembering.”</blockquote>
+      </div>
+      <div class="dots" id="dots"></div>
+    </section>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button type="button" class="lb-close" aria-label="Close">✕</button>
+      <button type="button" class="lb-nav prev" aria-label="Previous photo">‹</button>
+      <button type="button" class="lb-nav next" aria-label="Next photo">›</button>
+      <img id="lbImg" alt="" />
+      <p id="lbCap"></p>
+    </div>
+
+    <!-- ============ SCRATCH THE HEART ============ -->
+    <section class="scratch-sec reveal">
+      <h3 class="section-title">Save the Date</h3>
+      <p class="hint" id="scratchHint">Scratch the heart to reveal our wedding date</p>
+
+      <div class="heart-wrap" id="heartWrap">
+        <svg id="heartSvg" class="heart-bg" aria-hidden="true"></svg>
+
+        <div class="date-reveal" id="dateReveal">
+          <span class="dr-day">Monday</span>
+          <span class="dr-num">16</span>
+          <span class="dr-month">November 2026</span>
+        </div>
+
+        <canvas id="scratch" aria-label="Scratch card in the shape of a heart"></canvas>
+      </div>
+
+      <div class="meter"><i id="meterFill"></i></div>
+      <p class="meter-txt"><span id="scratchPct">0</span>% scratched</p>
+      <div class="dt-card locked" id="dtCard">
+        <div class="dt-lock" id="dtLock">🔒 Scratch the heart to unlock</div>
+
+        <div class="dt-head">
+          <span class="dt-chip" id="dtDay">Monday</span>
+          <span class="dt-title">Date &amp; Time</span>
+          <span class="dt-chip alt" id="dtLeft">--</span>
+        </div>
+
+        <div class="dt-body">
+          <div class="cal" id="cal" aria-label="November 2026 calendar"></div>
+
+          <div class="clock-box">
+            <svg class="clock" id="clock" viewBox="0 0 200 200" aria-label="Clock showing 9:15">
+              <circle class="c-face" cx="100" cy="100" r="92"/>
+              <circle class="c-rim" cx="100" cy="100" r="92"/>
+              <path class="c-arc" id="clockArc" fill="none"/>
+              <g id="clockTicks"></g>
+              <line class="hand h" id="handH" x1="100" y1="100" x2="100" y2="55"/>
+              <line class="hand m" id="handM" x1="100" y1="100" x2="100" y2="30"/>
+              <circle class="c-pin" cx="100" cy="100" r="6"/>
+            </svg>
+            <div class="digital"><span id="dtStart">9:15</span><i>AM</i></div>
+          </div>
+        </div>
+
+        <div class="dt-slot">
+          <div class="slot-top"><b>Muhurtham</b><span>9:15 AM &ndash; 10:15 AM</span></div>
+          <div class="slot-bar"><i id="slotFill"></i><em id="slotDot"></em></div>
+          <div class="slot-scale"><span>6 AM</span><span>9 AM</span><span>12 PM</span></div>
+        </div>
+      </div>
+
+      <button type="button" id="revealBtn" class="btn-ghost">Reveal instantly</button>
+    </section>
+
+    <!-- ============ COUNTDOWN ============ -->
+    <section class="count-sec reveal">
+      <h3 class="section-title">Counting Down</h3>
+      <p class="cd-sub">to our wedding, 16 November 2026 &middot; 9:15 AM</p>
+      <div class="countdown" id="countdown">
+        <div class="cd-box" data-max="100">
+          <svg class="cd-ring" viewBox="0 0 100 100"><circle class="trk" cx="50" cy="50" r="44"/><circle class="bar" cx="50" cy="50" r="44"/></svg>
+          <span id="cd-days">00</span><small>Days</small>
+        </div>
+        <div class="cd-box" data-max="24">
+          <svg class="cd-ring" viewBox="0 0 100 100"><circle class="trk" cx="50" cy="50" r="44"/><circle class="bar" cx="50" cy="50" r="44"/></svg>
+          <span id="cd-hours">00</span><small>Hours</small>
+        </div>
+        <div class="cd-box" data-max="60">
+          <svg class="cd-ring" viewBox="0 0 100 100"><circle class="trk" cx="50" cy="50" r="44"/><circle class="bar" cx="50" cy="50" r="44"/></svg>
+          <span id="cd-mins">00</span><small>Minutes</small>
+        </div>
+        <div class="cd-box tick" data-max="60">
+          <svg class="cd-ring" viewBox="0 0 100 100"><circle class="trk" cx="50" cy="50" r="44"/><circle class="bar" cx="50" cy="50" r="44"/></svg>
+          <span id="cd-secs">00</span><small>Seconds</small>
+        </div>
+      </div>
+      <p id="cd-msg" class="cd-msg"></p>
+    </section>
+
+    <!-- ============ VENUE ============ -->
+    <section class="venue glass reveal">
+      <h3 class="section-title">Venue</h3>
+      <p class="venue-name">Akilandeshwari Thirumana Mahal</p>
+      <p class="venue-place">Tamil Nadu, India</p>
+
+      <div class="map-card" id="mapCard">
+        <div class="map-tabs" role="tablist" aria-label="Map view">
+          <button type="button" class="tab on" data-view="m" role="tab" aria-selected="true">Map</button>
+          <button type="button" class="tab" data-view="k" role="tab" aria-selected="false">Satellite</button>
+        </div>
+
+        <div class="map-wrap" id="mapWrap">
+          <div class="map-skeleton" id="mapSkeleton"><span>Loading map…</span></div>
+          <iframe id="mapFrame"
+            title="Akilandeshwari Thirumana Mahal on Google Maps"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="map-shield" id="mapShield"><span>👆 Tap to explore the map</span></div>
+          <div class="map-error" id="mapError">
+            <p>The map could not load.</p>
+            <a class="btn-gold" target="_blank" rel="noopener" id="mapFallback" href="#">Open in Google Maps</a>
+          </div>
+        </div>
+
+        <div class="v-grid" id="vGrid">
+          <div class="v-item"><i>🏛️</i><b>Venue</b><span>Akilandeshwari Thirumana Mahal</span></div>
+          <div class="v-item"><i>💒</i><b>Type</b><span>Marriage Hall (Thirumana Mahal)</span></div>
+          <div class="v-item"><i>🗺️</i><b>State</b><span>Tamil Nadu, India</span></div>
+          <div class="v-item"><i>🧭</i><b>Coordinates</b><span>10.5960° N<br>78.4339° E</span></div>
+          <div class="v-item"><i>🌅</i><b>Sunrise</b><span id="vSunrise">--</span></div>
+          <div class="v-item"><i>🌇</i><b>Sunset</b><span id="vSunset">--</span></div>
+        </div>
+
+        <div class="sun-card">
+          <svg viewBox="0 0 300 130" class="sun-svg" aria-label="Sun path on the wedding day">
+            <path class="sun-track" d="M20 110 A130 100 0 0 1 280 110" />
+            <path class="sun-path" id="sunPath" d="M20 110 A130 100 0 0 1 280 110" />
+            <line class="sun-ground" x1="8" y1="110" x2="292" y2="110" />
+            <g id="sunDot"><circle r="13" class="sun-glow"/><circle r="7" class="sun-core"/></g>
+          </svg>
+          <p class="sun-note" id="sunNote">The sun is lovely at the time of Muhurtham</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HAPPY MOMENTS ============ -->
+    <section class="moments reveal" id="moments">
+      <h3 class="section-title">Happy Moments</h3>
+      <p class="mom-sub">Little memories on our way to forever</p>
+
+      <div class="stack" id="stack">
+        <figure class="polaroid" data-cap="Smiles that say it all">
+          <div class="ph"><img src="moment1.jpg" alt="Dhamodharan and Lakshmi smiling together" loading="lazy" /></div>
+          <figcaption>Smiles that say it all</figcaption>
+          <button type="button" class="zoom" aria-label="View photo larger">⤢</button>
+        </figure>
+        <figure class="polaroid" data-cap="Every moment with you">
+          <div class="ph"><img src="moment2.jpg" alt="Dhamodharan and Lakshmi selfie" loading="lazy" /></div>
+          <figcaption>Every moment with you</figcaption>
+          <button type="button" class="zoom" aria-label="View photo larger">⤢</button>
+        </figure>
+      </div>
+      <p class="mom-hint">Tap the photo or swipe to see the next memory</p>
+      <div class="mom-dots" id="momDots"></div>
+    </section>
+
+    <footer class="footer reveal">
+      <p class="thanks">Your presence will make our day complete</p>
+      <p class="sign">Dhamodharan &amp; Lakshmi</p>
+      <p class="fam">With love &amp; blessings from both families</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
